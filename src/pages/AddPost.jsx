@@ -49,7 +49,7 @@ export const AddPost = () => {
         likesCount: 0,
       });
       setUploaded(true);
-      e.target.reset();
+      setCategory(0)
     } catch (error) {
       console.log("Hiba a fájlfeltöltés során!");
     } finally {
@@ -57,8 +57,6 @@ export const AddPost = () => {
       //console.log('sikeres feltöltés');
       
     }
-
-    e.target.reset();
   };
 
   return (
@@ -84,17 +82,18 @@ export const AddPost = () => {
             </Select>
           </FormControl>
       </Box>
-        <FormControl>
+        <FormControl sx={{width:'100%'}}>
           <TextEditor story={story} setStory={setStory} type='create'/>
         </FormControl>
+      <Box sx={{display:'flex',flexWrap:'wrap',justifyContent:'space-between'}}>
+          <FileInput setImage={setImage} />
 
-        <FileInput setImage={setImage} />
-
-        <Button type="submit" variant="contained" color="primary" 
-          disabled={title.length==0 || story.length==0 || category==0 || !image}
-        >
-          Upload post
-        </Button>
+          <Button type="submit" variant="contained" color="primary" sx={{margin:1,height:'36px'}}
+            disabled={title.length==0 || story.length==0 || category==0 || !image}
+          >
+            Upload post
+          </Button>
+        </Box>
       </Box>
       {loading && <Loader />}
       {uploaded && <Alerts text="Sikeres mentés!" severity="success"/>}

@@ -30,7 +30,7 @@ export const FileInput = ({setImage}) => {
 console.log(err);
 
   return (
-    <>
+    <Box sx={{display:'flex'}}>
       <input
         accept="image/*"
         type="file"
@@ -46,12 +46,12 @@ console.log(err);
       </label>
       {imageUrl && selectedImage && (
         <Box mt={2} textAlign="center">
-          <div>Image Preview:</div>
-          <img src={imageUrl} alt={selectedImage.name} height="100px" />
+         
+          <img src={imageUrl} alt={selectedImage.name} height="100px"  style={{borderRadius:'5px'}}/>
         </Box>
       )}
       {err &&  <Alerts text={err} severity="error" /> }
-    </>
+    </Box>
   );
 };
 
