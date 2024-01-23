@@ -1,0 +1,30 @@
+.singlePost p{
+    text-align: justify;
+  }
+
+  .icon{
+    font-size: 2rem;
+    cursor: pointer;
+  }
+.singlePost span{
+    font-size: 0.8rem;
+}
+
+
+/*ha túl kis méretű a fotó, h ne torzúljon*/
+.image {
+  max-width: 100%; /*hogy a nagy méretűek is jól llátszódjanak*/
+  max-height: 100%; 
+  width: auto;
+  height: auto; 
+
+}
+
+.singlePost{
+    box-shadow: 0 0 5px gray;
+
+    
+}
+.post-details{
+  max-width: 700px;
+}
