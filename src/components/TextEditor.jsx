@@ -7,7 +7,7 @@ export const TextEditor = ({story,setStory,setNewStory,type}) => {
   const [value, setValue] = useState( RichTextEditor.createValueFromString(story, 'html') );
 
   useEffect(() => {
-     if (story) {
+     if (story && type=='edit') {
       setValue(RichTextEditor.createValueFromString(story, 'html'));
     }
   }, [story]);
