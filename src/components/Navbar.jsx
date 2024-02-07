@@ -23,12 +23,12 @@ import { useNavigate } from "react-router-dom";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const pages = [
-  { path: "/", name: "Home" },
-  { path: "/about", name: "About" },
+  { path: "/", name: "Főoldal" },
+  { path: "/about", name: "Rólam" },
 ];
 const settings = [
-  { path: "/profile", name: "Profile" },
-  { path: "/logout", name: "Logout" },
+  { path: "/profile", name: "Fiókod" },
+  { path: "/logout", name: "Kijelentkezés" },
 ];
 
 export const Navbar = ({avatar,setAvatar}) => {
@@ -41,7 +41,7 @@ export const Navbar = ({avatar,setAvatar}) => {
   useEffect(() => {
     setAvatar(null)
     if (user) {
-      setNavPages([...pages, { path: "/create", name: "Create Blog" }]);
+      setNavPages([...pages, { path: "/create", name: "Posztolj" }]);
       //getAvatar(user.uid,setAvatar)
     }else 
       setNavPages([...pages]);
@@ -63,12 +63,12 @@ export const Navbar = ({avatar,setAvatar}) => {
   };
   console.log(user);
   return (
-    <AppBar  sx={{backgroundImage: "linear-gradient(to top, #a3bded 0%, #6991c7 100%)",}}>
+    <AppBar  sx={{backgroundImage:"linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)"}}>
       <Container maxWidth="1200px" >
         <Toolbar disableGutters>
           <Typography variant="h6" noWrap component="a" href="/"
-            sx={{ mr: 2,display: { xs: "none", md: "flex" },fontFamily: "monospace", fontWeight: 700,letterSpacing: ".3rem",color: "inherit", textDecoration: "none",}}>
-            LOGO
+            sx={{ borderRadius:'50%',display: { xs: "none", md: "flex" }}}>
+              <img style={{maxWidth:'50px'}} src="kam.ico" alt="kam" />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -111,7 +111,7 @@ export const Navbar = ({avatar,setAvatar}) => {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {navPages.map((obj) => (
               <NavLink key={obj.name} to={obj.path} className={({ isActive }) => (isActive ? "active" : "")}>
-                <Button onClick={handleCloseNavMenu}  sx={{ my: 2, color: "white", display: "block" }} >
+                <Button onClick={handleCloseNavMenu}  sx={{ my: 2, color: " #f7797d", display: "block" }} >
                   {obj.name}
                 </Button>
               </NavLink>
@@ -124,14 +124,14 @@ export const Navbar = ({avatar,setAvatar}) => {
                 <IconButton sx={{ p: 0 }}>
                   <NavLink to="/signinup/in" className={({ isActive }) => (isActive ? "active" : "")} >
                     <Typography  textAlign="center" sx={{ color: "white", padding: "10px" }}>
-                      Sign In
+                      Bejelentkezés
                     </Typography>
                   </NavLink>
                 </IconButton>
                 <IconButton sx={{ p: 0 }}>
                   <NavLink to="/signinup/up" className={({ isActive }) => (isActive ? "active" : "")}>
                     <Typography textAlign="center"  sx={{ color: "white", padding: "10px" }} >
-                      Sign Up
+                      Regisztráció
                     </Typography>
                   </NavLink>
                 </IconButton>

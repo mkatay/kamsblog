@@ -16,9 +16,9 @@ export const Posts = ({ selectedCategories }) => {
   console.log(posts);
   return (
     <div className="">
-      <motion.h2 initial={{x:'100vw'}} animate={{x:0}} transition={{type:'spring',delay:0.5,stiffness:10}}>Daily blogs</motion.h2>
+      <motion.h4 initial={{x:'100vw'}} animate={{x:0}} transition={{type:'spring',delay:0.5,stiffness:10}}>Awesome collection</motion.h4>
       <hr />
-      <div style={{display:'flex',flexWrap:'wrap',gap:10,justifyContent:'center'}}>
+      <div className="cards-holder" style={{display:'flex',flexWrap:'wrap',gap:10,justifyContent:'center'}}>
         {posts.map((obj) => (
           <PostCard key={obj.id} {...obj} />
         ))}
@@ -26,3 +26,4 @@ export const Posts = ({ selectedCategories }) => {
     </div>
   );
 };
+ 

@@ -11,17 +11,18 @@ import { truncatedStory } from "../utility/sanitizeHTML";
 import { useNavigate } from "react-router-dom";
 import { FaThumbsUp } from "react-icons/fa6";
 import {motion} from 'framer-motion'
+import './PostCard.css'
 const maxLength=60
 
 export const PostCard=({category,photoUrl,title,author,description,timestamp,id,likes})=> {
   const navigate=useNavigate()
   return (
-    <Card sx={{ width: 320 }}>
+    <Card sx={{ width: 300 }}>
       <div>
         <Typography level="title-lg">{title}</Typography>
         <Typography level="body-sm">{elapsedTime(timestamp)}</Typography>
         <IconButton
-          aria-label="bookmark Bahamas Islands"
+         
           variant="plain"
           color="neutral"
           size="sm"
@@ -39,17 +40,17 @@ export const PostCard=({category,photoUrl,title,author,description,timestamp,id,
       </AspectRatio>
       <CardContent orientation="horizontal">
         <div>
-          <Typography level="body-xs">{category}</Typography>
+          <Typography level="body-xs" sx={{color:"#f7797d"}}>{category}</Typography>
           <Typography >
           {truncatedStory(description,maxLength)}...
           </Typography>
         </div>
-        <Button variant="solid"size="md"color="primary"
-          aria-label="Explore Bahamas Islands"
-          sx={{ ml: 'auto', alignSelf: 'end', fontWeight: 600 }}
+        <Button variant="solid"size="md"
+         
+          sx={{ ml: 'auto', alignSelf: 'end', fontWeight: 600,backgroundColor:"#fbd786" }}
           onClick={()=>navigate('detail/'+id)}
         >
-         <motion.span  whileHover={{scale:1.1}}> olvass tovább</motion.span>
+         <motion.span  whileHover={{scale:1.1}}>több...</motion.span>
         </Button>
       </CardContent>
     </Card>
