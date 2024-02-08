@@ -1,0 +1,40 @@
+.home {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    
+}
+
+.posts {
+    flex: 1;
+    overflow: auto;
+    margin-right:250px;
+}
+
+.categ {
+  
+    width: 250px;
+    position: fixed;
+    top: 40px;
+    right: 0;
+    bottom: 0;
+    /*background-color: #f1f1f1;*/
+}
+
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column; 
+    }
+
+    .posts {
+        margin-right: 0;
+        display: flex;
+        
+    }
+
+    .categ {
+        position: static;
+        width: 100%;
+        margin:0;
+    }
+}

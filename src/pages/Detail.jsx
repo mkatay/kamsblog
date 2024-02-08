@@ -88,7 +88,7 @@ const handleLikes=async ()=>{
        </div>
        {msg && <MyAlert text={msg}/>}  
        <div className="d-flex justify-content-center">
-          <button  className='btn btn-light ' onClick={()=>navigate('/')}>vissza...</button>    
+          <button  className='btn btn-light ' onClick={()=>navigate('/myblog/')}>vissza...</button>    
         </div> 
          </div>
         <Comments id={params.id}/>

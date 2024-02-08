@@ -48,7 +48,7 @@ export const PostCard=({category,photoUrl,title,author,description,timestamp,id,
         <Button variant="solid"size="md"
          
           sx={{ ml: 'auto', alignSelf: 'end', fontWeight: 600,backgroundColor:"#fbd786" }}
-          onClick={()=>navigate('detail/'+id)}
+          onClick={()=>navigate('/detail/'+id)}
         >
          <motion.span  whileHover={{scale:1.1}}>több...</motion.span>
         </Button>

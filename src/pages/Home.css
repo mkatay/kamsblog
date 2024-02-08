@@ -1,40 +1,86 @@
-.home {
+.about {
     display: flex;
-    flex-direction: row;
-    padding: 10px;
-    
+    flex-direction: column;
+    min-height: 100%;
 }
 
-.posts {
-    flex: 1;
-    overflow: auto;
-    margin-right:250px;
+.about img {
+    max-width: 300px;
+    transition: transform 0.5s ease; /* Animáció */
 }
 
-.categ {
-  
-    width: 250px;
-    position: fixed;
-    top: 40px;
-    right: 0;
-    bottom: 0;
-    /*background-color: #f1f1f1;*/
+.about-header {
+    color: #f7797d;
+    padding: 20px;
+    height: 30%;
 }
 
-@media (max-width: 768px) {
-    .home {
-        flex-direction: column; 
+.about-container {
+    width: 80%;
+    margin: 0 auto;
+}
+.rotated{
+    border-radius: 10px;
+}
+
+.about-main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+.social-icons a {
+    color: white;
+    margin-right: 10px;
+}
+
+.about-card {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-text {
+    width: 60%;
+}
+
+.about-image {
+    width: 30%;
+}
+p>img{
+width: 50px;
+border-radius: 50%;
+}
+/*
+@keyframes rotateAnimation {
+    from {
+        transform: rotate(0deg);
     }
-
-    .posts {
-        margin-right: 0;
-        display: flex;
-        
-    }
-
-    .categ {
-        position: static;
-        width: 100%;
-        margin:0;
+    to {
+        transform: rotate(-10deg);
     }
 }
+
+.about-image img {
+    max-width: 300px;
+    animation: rotateAnimation 1s ease; 
+}
+
+
+.about-image:hover img {
+    animation: rotateAnimation 0.5s ease;
+}
+*/

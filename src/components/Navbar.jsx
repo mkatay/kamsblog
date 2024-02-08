@@ -14,17 +14,14 @@ import AdbIcon from "@mui/icons-material/Adb";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
-//import LogoutIcon from "@mui/icons-material/Logout";
-//import Avatar from "@mui/material/Avatar";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-//import { getAvatar } from "../utility/uploadFile";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
 
 const pages = [
   { path: "/", name: "Főoldal" },
-  { path: "/about", name: "Rólam" },
+  { path: "myblog", name: "Bejegyzések" },
 ];
 const settings = [
   { path: "/profile", name: "Fiókod" },
@@ -68,7 +65,7 @@ export const Navbar = ({avatar,setAvatar}) => {
         <Toolbar disableGutters>
           <Typography variant="h6" noWrap component="a" href="/"
             sx={{ borderRadius:'50%',display: { xs: "none", md: "flex" }}}>
-              <img style={{maxWidth:'50px'}} src="kam.ico" alt="kam" />
+              <img style={{maxWidth:'50px'}} src="logo5.jpg" alt="kam" />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -111,7 +108,7 @@ export const Navbar = ({avatar,setAvatar}) => {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {navPages.map((obj) => (
               <NavLink key={obj.name} to={obj.path} className={({ isActive }) => (isActive ? "active" : "")}>
-                <Button onClick={handleCloseNavMenu}  sx={{ my: 2, color: " #f7797d", display: "block" }} >
+                <Button onClick={handleCloseNavMenu}  sx={{ my: 2, color: "#d95b5f", display: "block" }} >
                   {obj.name}
                 </Button>
               </NavLink>

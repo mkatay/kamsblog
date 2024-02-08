@@ -8,7 +8,6 @@ import { Home } from "./pages/Home";
 import { Detail } from "./pages/Detail";
 import { AddPost } from "./pages/AddPost";
 import { NotFound } from "./pages/NotFound";
-import { About } from "./pages/About";
 import { SignInUp } from "./pages/SignInUp";
 //import { SignUp } from "./pages/SignUp";
 import { PwReset } from "./pages/PwReset";
@@ -18,6 +17,7 @@ import { ConfirmProvider } from "material-ui-confirm";
 import { Profile } from "./pages/Profile";
 import { useState } from "react";
 import { EditPost } from "./pages/EditPost";
+import { MyBlog } from "./pages/MyBlog";
 
 function App() {
   const [avatar,setAvatar]=useState(null)
@@ -30,11 +30,11 @@ function App() {
               <Navbar  avatar={avatar} setAvatar={setAvatar}/>
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/detail/:id" element={<Detail />} />
-                <Route path="/update/:id" element={<EditPost />} />
-                <Route path="/create" element={<AddPost />} />
-                <Route path="/signinup/:type" element={<SignInUp />} />
+                <Route path="myblog" element={<MyBlog />} />
+                <Route path="detail/:id" element={<Detail />} />
+                <Route path="update/:id" element={<EditPost />} />
+                <Route path="create" element={<AddPost />} />
+                <Route path="signinup/:type" element={<SignInUp />} />
                
                 <Route path="/pwreset" element={<PwReset />} />
                 <Route path="/profile" element={<Profile setAvatar={setAvatar}/>} />
