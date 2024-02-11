@@ -25,7 +25,7 @@ export const UserProvider = ({ children }) => {
     await signOut(auth) 
     if(location.pathname=='/create' || location.pathname=='/profile')
           navigate('/')   
-
+console.log('logoutUser');
   }
   const loginUser=async (email,password)=>{
     try{

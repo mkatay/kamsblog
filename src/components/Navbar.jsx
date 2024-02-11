@@ -25,7 +25,8 @@ const pages = [
 ];
 const settings = [
   { path: "/profile", name: "Fiókod" },
-  { path: "/logout", name: "Kijelentkezés" },
+  { path: "/", name: "Kijelentkezés" },
+
 ];
 
 export const Navbar = ({avatar,setAvatar}) => {
@@ -63,7 +64,7 @@ export const Navbar = ({avatar,setAvatar}) => {
     <AppBar  sx={{backgroundImage:"linear-gradient(to right, #c6ffdd, #fbd786, #f7797d)"}}>
       <Container maxWidth="1200px" >
         <Toolbar disableGutters>
-          <Typography variant="h6" noWrap component="a" href="/"
+          <Typography variant="h6" noWrap 
             sx={{ borderRadius:'50%',display: { xs: "none", md: "flex" }}}>
               <img style={{maxWidth:'50px'}} src="logo5.jpg" alt="kam" />
           </Typography>
@@ -149,7 +150,7 @@ export const Navbar = ({avatar,setAvatar}) => {
                   >
                     {settings.map((setting) => (
                       <MenuItem key={setting.name} onClick={handleCloseUserMenu} >
-                        <Typography textAlign="center" onClick={()=>setting.name=='Logout' ? logoutUser() : navigate(setting.path)}>
+                        <Typography textAlign="center" onClick={()=>setting.path=='/' ? logoutUser() : navigate(setting.path)}>
                           {setting.name}
                         </Typography>
                       </MenuItem>

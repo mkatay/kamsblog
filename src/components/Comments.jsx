@@ -20,13 +20,12 @@ export const Comments = ({id}) => {
         await addComment(id,user.email,user.displayName,newComment)
         setNewComment('')
     }
-    console.log(user);
+    //console.log(user,comments);
   return (
-    <div style={{ padding: 5,maxWidth:'400px' }} >
-      <h6>Comments</h6>
-      
+    <div style={{ maxWidth:'400px',minWidth:'250px' }} >
+      <h6>Kommentek</h6>
       <Paper sx={{ padding: comments?.length>0 ? "20px 10px":"0" ,marginBottom:'5px'}}>
-        {comments && comments.map(obj=>
+        {comments &&  comments.map(obj=>
         <>
         <Grid container wrap="nowrap" spacing={2}>
           <Grid item>
@@ -43,23 +42,20 @@ export const Comments = ({id}) => {
           </Grid>
         </Grid>
         <Divider variant="fullWidth" style={{ margin: "10px 0" }} />
-        </>)
-}
+        </>   )
+      
+      }
        
       </Paper>
 
-    {user && 
-    <>
-        <Textarea minRows={3} placeholder="add a comment" value={newComment} onChange={(e)=>setNewComment(e.target.value)}/>
-          <Button type="submit" variant="contained" color="primary" sx={{margin:1}}
-          disabled={newComment.length==0 }
-          onClick={handleAddComment}
-        >
-          save
-        </Button>
-        </>
-    }
-     
+     <Textarea minRows={3} placeholder="add a comment" value={newComment} onChange={(e)=>setNewComment(e.target.value)}/>
+      <Button type="submit" variant="contained" color="primary" sx={{margin:1}}
+        disabled={newComment.length==0 || !user}
+        onClick={handleAddComment}
+      >
+        save
+    </Button>
+
      
      
     </div>
